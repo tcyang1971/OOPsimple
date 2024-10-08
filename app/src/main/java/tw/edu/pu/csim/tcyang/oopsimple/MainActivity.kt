@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class MainActivity : AppCompatActivity(), OnClickListener, OnLongClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         else{
             txv.text = "我是可愛的小企鵝"
         }
+    }
+
+    override fun onLongClick(p0: View?): Boolean {
+        var txv: TextView = findViewById(R.id.txv)
+        txv.text = "長按企鵝"
+        return true
     }
 
 }
