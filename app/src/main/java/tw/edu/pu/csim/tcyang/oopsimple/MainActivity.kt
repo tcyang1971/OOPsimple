@@ -1,13 +1,16 @@
 package tw.edu.pu.csim.tcyang.oopsimple
 
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +24,14 @@ class MainActivity : AppCompatActivity() {
         //txv.text = "物件導向實例"
         var v1 = Three(3, 8, 9)
         txv.text = v1.Sum().toString() + "\n" + v1.Display()
+
+        var img: ImageView = findViewById(R.id.img)
+        img.setOnClickListener(this)
+    }
+
+    override fun onClick(p0: View?) {
+        var txv: TextView = findViewById(R.id.txv)
+        txv.text = "我是可愛的小企鵝"
     }
 }
 
