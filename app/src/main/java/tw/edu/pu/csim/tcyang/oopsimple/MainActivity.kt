@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), OnClickListener, OnLongClickListener {
         var img: ImageView = findViewById(R.id.img)
         img.setOnClickListener(this)
         txv.setOnClickListener(this)
+        img.setOnLongClickListener(this)
     }
 
     override fun onClick(v: View?) {
