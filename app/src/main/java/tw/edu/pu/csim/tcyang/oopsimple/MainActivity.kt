@@ -20,13 +20,21 @@ class MainActivity : AppCompatActivity() {
         var txv: TextView = findViewById(R.id.txv)
         //txv.text = "物件導向實例"
         var v1 = Three(3, 8, 9)
-        txv.text = v1.Sum().toString()
+        txv.text = v1.Sum().toString() + "\n" + v1.Display()
     }
 }
 
-open class Two(var x:Int, var y:Int){
+interface ShowPurpose{
+    fun Display(): String
+}
+
+open class Two(var x:Int, var y:Int): ShowPurpose{
     open fun Sum(): Int {
         return x + y
+    }
+
+    override fun Display(): String {
+        return "設定變數，並透過Sum方法回傳總和"
     }
 }
 
