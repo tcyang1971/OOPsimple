@@ -18,6 +18,18 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         var txv: TextView = findViewById(R.id.txv)
-        txv.text = "物件導向實例"
+        //txv.text = "物件導向實例"
+        var v1 = Two()
+        v1.x = 5
+        v1.y = 7
+        txv.text = v1.Sum().toString()
+    }
+}
+
+class Two{
+    var x:Int = 0
+    var y:Int = 0
+    fun Sum(): Int {
+        return x + y
     }
 }
