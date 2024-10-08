@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
 }
 
 open class Two(var x:Int, var y:Int){
-    fun Sum(): Int {
+    open fun Sum(): Int {
         return x + y
     }
 }
 
 class Three(x: Int, y:Int, var z:Int) :Two(x, y){
-
+    override fun Sum(): Int {
+        return x + y + z
+    }
 }
