@@ -3,6 +3,7 @@ package tw.edu.pu.csim.tcyang.oopsimple
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
+import android.view.View.OnLongClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -27,12 +28,19 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
         var img: ImageView = findViewById(R.id.img)
         img.setOnClickListener(this)
+        txv.setOnClickListener(this)
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(v: View?) {
         var txv: TextView = findViewById(R.id.txv)
-        txv.text = "我是可愛的小企鵝"
+        if (v == txv){
+            txv.text = "文字短按"
+        }
+        else{
+            txv.text = "我是可愛的小企鵝"
+        }
     }
+
 }
 
 interface ShowPurpose{
